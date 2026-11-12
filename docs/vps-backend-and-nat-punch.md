@@ -11,7 +11,11 @@ This note records a small-friends-group option for hosting the SPT/Fika backend 
 
 ## Starting VPS size
 
-For only the SPT/Fika backend and NAT-punch service, start around **2 vCPU, 4 GB RAM, and 50 GB SSD storage**. This is a practical estimate for a small private group, not a published Fika minimum or a benchmarked guarantee. Monitor resource use and resize if needed.
+For only the SPT/Fika backend and NAT-punch service, aim for **2 vCPU, 5 GB RAM, and at least 50 GB SSD storage**. This is a practical estimate for a small private group, not a published Fika minimum or a benchmarked guarantee. A 4 GB plan can be a lower-cost trial if you skip headless and monitor memory closely; 5 GB gives the OS and container more breathing room.
+
+### Sparked Hosting option
+
+Sparked Hosting's VPS page currently lists Premium KVM plans including a 4 GB / 2 vCPU / 90 GB plan and a 5 GB / 2 vCPU / 100 GB plan. The 5 GB tier is the closer fit to the suggested starting size. The listed prices and availability can change, so confirm them at checkout. Choose a Linux OS you can administer (for example, Ubuntu Server) and a location near the players. Sparked describes its VPS service as self-managed; plan to configure the OS firewall, Docker/Compose if using the community example, and the Fika services yourself.
 
 The community Docker guide summarized in [the headless guide review](fika-headless-guide-review.md) lists 4 vCPU, 16 GB RAM, and 100 GB for a deployment that also runs a headless game client and stores its game files. Those figures should not be treated as the backend-only minimum. The Fika wiki separately says the headless client is not supported on a VPS.
 
@@ -48,6 +52,10 @@ Linux Mint is Ubuntu-based, so Arch `pacman` commands do not apply as written. T
 
 Keep profiles, configuration, and logs persistent and back them up before changing versions. Do not share profile data or server access beyond the trusted group.
 
+## Moving from the VPS to a home server later
+
+Keep the SPT/Fika backend version and configuration documented, and back up the persistent `user` data, profiles, and relevant Fika configuration before migration. Install the matching server/Fika versions on the home machine, restore the data, and test it locally before switching clients. Friends will then need the new backend address in their launchers. For internet access from home, use port forwarding only if your ISP and router allow it; otherwise use Fika's VPN method or keep an externally reachable VPS for the NAT-punch role. Changing where the backend runs does not move the raid-host role: a player PC still hosts raids unless a supported headless client runs on a separate physical machine.
+
 ## References
 
 - [Fika general information](https://wiki.project-fika.com/general-information.md)
@@ -56,5 +64,6 @@ Keep profiles, configuration, and logs persistent and back them up before changi
 - [Fika public NAT-punch server guide](https://wiki.project-fika.com/advanced-features/nat-punching/fika-nat-punch-server.md)
 - [Fika NAT-punching overview](https://wiki.project-fika.com/advanced-features/nat-punching.md)
 - [Fika headless client requirements](https://wiki.project-fika.com/advanced-features/headless-client.md)
+- [Sparked Hosting VPS plans](https://sparkedhost.com/vps-hosting)
 - [eero NAT port mode](https://www.eero.com/support/articles/what-is-nat-port-mode)
 - [Community Linux Docker guide review](fika-headless-guide-review.md)
