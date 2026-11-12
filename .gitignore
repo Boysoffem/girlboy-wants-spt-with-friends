@@ -1,0 +1,27 @@
+# Game and server data: never commit these files
+EscapeFromTarkov/
+SPT/
+SPT_Runtime/
+SPTurkey_*/
+headless/
+server/
+user/
+profiles/
+logs/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.local.json
+secrets/
+
+# Archives and generated artifacts
+*.7z
+*.zip
+*.tar
+*.tar.gz
+*.dll
+*.exe
+*.so
+*.log
