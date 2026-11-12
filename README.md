@@ -21,6 +21,8 @@ The existing single-player install works on Linux. The LAN server should be a se
 
 See [Linux client setup notes](docs/linux-client-setup.md) for the install guide summary and [Fika headless guide review](docs/fika-headless-guide-review.md) for analysis of the supplied Docker Compose setup.
 
+For an internet-hosted option, see [VPS backend and NAT-punch planning](docs/vps-backend-and-nat-punch.md). It covers a small backend-only VPS; it is not a ready-to-run deployment recipe.
+
 ## Recommended server platform
 
 **Ubuntu Server 24.04 LTS** is the recommended starting point for the rack server. Pterodactyl officially supports it, and it has mature Docker support. Debian 12 and 13 are also supported options. The client can remain on Linux Mint; client and server do not need to use the same distribution.
